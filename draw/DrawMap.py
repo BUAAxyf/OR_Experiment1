@@ -57,14 +57,42 @@ class DrawMap:
             # ax.annotate(time_window, (x, y), xytext=(5, -20),
             #             textcoords='offset points', fontsize=8)
 
+    # def draw_routes(self, solution, ax):
+    #     """
+    #     绘制路线
+    #     """
+    #     for k, route in solution.items():
+    #         color = self.colors[k]
+    #         route_x = []
+    #         route_y = []
+    #
+    #         # 绘制路线
+    #         for i, j in route:
+    #             # 起点坐标
+    #             start_x = self.customer_data[i]['x']
+    #             start_y = self.customer_data[i]['y']
+    #             # 终点坐标
+    #             end_x = self.customer_data[j]['x']
+    #             end_y = self.customer_data[j]['y']
+    #
+    #             # 画箭头
+    #             ax.arrow(start_x, start_y, end_x - start_x, end_y - start_y,
+    #                      head_width=2, head_length=3, fc=color, ec=color,
+    #                      length_includes_head=True, alpha=0.6)
+    #
+    #             route_x.extend([start_x, end_x])
+    #             route_y.extend([start_y, end_y])
+    #
+    #         # 添加路线标签
+    #         label = f'Vehicle {k + 1}'
+    #         ax.plot(route_x, route_y, c=color, alpha=0.4, label=label)
+
     def draw_routes(self, solution, ax):
         """
         绘制路线
         """
         for k, route in solution.items():
             color = self.colors[k]
-            route_x = []
-            route_y = []
 
             # 绘制路线
             for i, j in route:
@@ -80,12 +108,8 @@ class DrawMap:
                          head_width=2, head_length=3, fc=color, ec=color,
                          length_includes_head=True, alpha=0.6)
 
-                route_x.extend([start_x, end_x])
-                route_y.extend([start_y, end_y])
-
-            # 添加路线标签
+            # 添加路线标签 - 可以保留，但要确保label已定义
             label = f'Vehicle {k + 1}'
-            ax.plot(route_x, route_y, c=color, alpha=0.4, label=label)
 
     def draw_solution(self, solution, title="VRP Solution"):
         """
