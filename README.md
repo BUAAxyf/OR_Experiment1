@@ -207,6 +207,7 @@ classDiagram
     Constraint --> Model : adds constraints to
     Objective --> Model : sets objective for
     DrawMap --> Main : returns visualization to
+    Read --> Main : returns data to
 ```
 
 ## 核心功能
