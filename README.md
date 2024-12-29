@@ -8,6 +8,8 @@
 
 该项目使用Python语言开发，采用GUROBI优化求解器来处理混合整数规划模型。
 
+本项目已上传Github，网址：[BUAAxyf/OR_Experiment1: This project is aimed at solving simple CVRPTW model by calling GUROBI](https://github.com/BUAAxyf/OR_Experiment1)
+
 ## 数学模型
 
 ### 符号说明
